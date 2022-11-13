@@ -46,9 +46,14 @@ public class Sushu {
         for(int i=2;i<n;i++){
             if(!isPrime[i]){
                 count++;
+                //todo 这个条件可以改进，减少遍历的次数
                 for(int j=2*i; j<n; j+=i){
                     isPrime[j] = true;
                 }
+                //改进后
+//                for(int j=i*i; j<n; j+=i){
+//                    isPrime[j] = true;
+//                }
             }
         }
         return count;
